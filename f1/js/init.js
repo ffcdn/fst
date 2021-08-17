@@ -349,7 +349,7 @@ function htmls() {
                                 props: {
                                     style: 'width:100%;height:100%;padding-left:.4rem',
                                     // todo
-                                    src: '//astonmartin.oss-accelerate.aliyuncs.com/f1/other/shua/zq.png'
+                                    src: 'https://cdn.jsdelivr.net/gh/ffcdn/fst@3/f1/other/shua/zq.png'
                                 }
                             })
                         ]
