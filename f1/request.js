@@ -1,4 +1,4 @@
-let baseDomain='//gwgp-k6cvn8uztuz.n.bdcloudapi.com';
+let baseDomain='';
 function ajax(opt) {
     opt = opt || {};
     // console.log(opt);
