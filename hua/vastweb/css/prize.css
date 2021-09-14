@@ -1,0 +1,468 @@
+
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    .globalmask{
+        background-color: #fff;
+        height: 100vh;
+        width: 100vw; 
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 999999;
+    }
+    
+    .app {
+        width: 99vw;
+        height: 99vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgb(235, 205, 155);
+        /* border: 1px solid #000; */
+    }
+
+    .app .prize {
+        width: 90%;
+      
+        background-color: rgb(234, 94, 77);
+        border-radius: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+        padding-top: 50px;
+    }
+
+    .app .prize .logo {
+        width: 80px;
+        height: 80px;
+        border-radius: 15px;
+        background-color: rgb(234, 94, 77);
+    }
+
+    .app .prize .title {
+        font-size: 26px;
+
+        padding-top: 20px;
+
+    }
+
+    .app .prize .desc {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 30px 0;
+        margin-top: 10px;
+    }
+
+    .app .prize .desc .sub {
+        font-size: 16px;
+
+    }
+    .app .prize .desc .guide{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 10px;
+    }
+    .app .prize .desc .guide .tip {
+        
+        font-size: 14px;
+        padding: 1px 4px;
+        background-color: rgb(235, 205, 155);
+        color: rgb(234, 94, 77);
+    }
+    .app .prize .desc .guide .sanjiao{
+        width: 0;
+        height: 0;
+        border-top: 12px solid transparent;
+        border-right: 8px solid rgb(235, 205, 155);
+        border-bottom: 10px solid transparent;
+    }
+  
+    .app .open {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 250px;
+        position: relative;
+        /* background-color: #fff; */
+    }
+    .app .open .line{
+        width: 100%;
+        height: 40px;
+      
+        border-radius: 10px 10px 50% 50% / 10px 10px 90% 90%;
+        box-shadow: rgb(235 205 155) 0px 5px 0px -1px;
+        position: absolute;
+        z-index: 9;
+    }
+    .app .open .loadbutton{
+        width: 25vw;
+        height: 25vw;
+        background-color: rgb(235, 205, 155);
+        font-size: 40px;
+        box-shadow: rgb(0 0 0 / 20%) 0px 4px 0px 0px;
+        border-radius: 50%;
+        color:#262626 ;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 11;
+        position: absolute;
+        top: 100px;
+      
+    }
+    .xuanzhun{
+        -webkit-animation: anim 0.6s infinite alternate;
+        -ms-animation: anim 0.6s infinite alternate;
+        animation: anim 0.4s infinite alternate;
+    }
+    @keyframes anim {
+        from {
+          transform: rotateY(180deg);
+        }
+       
+        to {
+          transform: rotateY(360deg);
+        }
+    }
+    .app .prize .bottom {
+        font-size: 12px;
+        position: absolute;
+        bottom: 20px;
+    }
+
+    
+    .goback {
+        position: fixed;
+        z-index: 99;
+        top: 10px;
+        left: -15px;
+        width: 80px;
+        height: 40px;
+        border-radius: 0px 20px 20px 0px;
+        background-color: rgba(255, 255, 255, 0.5);
+        font-size: 14px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #262626;
+    }
+    .gobacklanding{
+        background-color: rgba(0,0,0,0.3);
+    }
+    .share-contanier {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100vw;
+        height: 100vh;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    .share-contanier .share-head {
+      		  width: 100%;
+        height: 325px;
+        position: relative;
+        z-index: 88;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        color: rgb(220, 205, 155);
+
+    }
+
+    .share-contanier .share-head::after {
+        background-color: rgb(236, 94, 77);
+        content: '';
+        width: 140%;
+        height: 320px;
+        position: absolute;
+        left: -22%;
+        top: 0;
+        z-index: -1;
+        border-radius: 0 0 50% 50%;
+        box-shadow: rgb(246,198,136) 0px 2px 0px 0px;
+    }
+
+    .share-contanier .share-head .share-logo {
+   		 width: 80px;
+        height: 80px;
+        border-radius: 10px;
+        background-color: #ec5e4d;
+    
+    }
+
+    .share-contanier .share-head .subtitle {
+
+        font-size: 18px;
+        margin-top: 10px ;
+   
+    }
+
+    .share-contanier .share-head .prizenum {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+    }
+
+    .share-contanier .share-head .prizenum .letter {
+        font-size: 45px;
+    }
+
+    .share-contanier .share-head .prizenum .total {
+        font-size: 45px;
+    }
+
+    .share-contanier .share-head .auth {
+        font-size: 15px;
+        margin-bottom: 20px;
+    }
+
+    .share-contanier .share-head .getprize {
+        margin: 0px auto;
+        width: 98px;
+        height: 40px;
+        border-radius: 20px;
+        background-color: rgb(220, 205, 155);
+        color: rgb(51, 51, 51);
+        text-align: center;
+        line-height: 40px;
+        font-size: 16px;
+        box-shadow: rgb(0 0 0 / 20%) 0px 4px 0px 0px;
+
+        padding: 0px 15px;
+    }
+
+
+
+    .share-contanier .userinfo {
+        font-size: 14px;
+        color: #262626;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: column;
+        width: 100%;
+        height: 30%;
+    }
+
+    .share-contanier .userinfo .empty {
+        width: 100%;
+        /* height: 10px;
+        background-color: rgb(236, 238, 237); */
+        margin: 8px 0;
+        border: 5px solid rgb(236, 238, 237);
+        margin-top: 15px;
+    }
+
+    .share-contanier .userinfo .numbers {
+        color: rgb(146, 148, 147);
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: flex-start;
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+
+    }
+
+    .share-contanier .userinfo .numtotal {
+        margin: 0 10px;
+    }
+
+    .share-contanier .userinfo .usrbox {
+
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        width: 100%;
+    }
+
+    .share-contanier .userinfo .usrbox .usritem {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .share-contanier .userinfo .usrbox .usritem .avatar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .share-contanier .userinfo .usrbox .usritem .avatar>img {
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        margin: 0 10px;
+    }
+
+    .share-contanier .userinfo .usrbox .usritem .avatar .left-item {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+        line-height: 22px;
+    }
+
+    .share-contanier .userinfo .usrbox .usritem .avatar .left-item .timer {
+        color: rgb(146, 148, 147);
+    }
+
+    .share-contanier .userinfo .usrbox .usritem .fruit {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 10px;
+
+    }
+
+    .share-contanier .userinfo .usrbox .usritem .fruit>img {
+        width: 20px;
+        height: 20px;
+        margin-right: 5px;
+    }
+
+    .share-contanier .userinfo .usrbox .usritem .fruit .getstatus {
+        color: rgb(236, 94, 77);
+        margin-right: 10px;
+    }
+
+    .share-contanier .userinfo .usrbox .usritem .fruit .result {
+        font-weight: bold;
+    }
+
+    .msg-container {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        left: 0;
+        top: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+    }
+
+    .msg-container .msg-box {
+        background-color: rgba(255, 255, 255, 1);
+        width: 80%;
+        border-radius: 10px;
+        transition: all 0.2s ease-in-out;
+        /* transition-timing-function: cubic-bezier(0.25, 1.65, 0.4, 0.65) */
+    }
+
+    .msg-container .msg-box .msg-content {
+        padding: 20px 18px;
+    }
+
+    .msg-container .msg-box .msg-button {
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+    }
+
+    .msg-container .msg-box .msg-button .cancel {
+        width: 50%;
+        height: 52px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-right: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .msg-container .msg-box .msg-button .comfirm {
+        width: 50%;
+        display: flex;
+        height: 52px;
+        align-items: center;
+        color: #646a82;
+        justify-content: center;
+    }
+
+    .show {
+        visibility: visible;
+    }
+
+    .hidden {
+        visibility: hidden;
+        opacity: 0
+    }
+
+    .shareguide {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 180px;
+        height: 160px;
+        z-index: 89;
+    }
+    
+    .guidespot {
+        overflow: hidden;
+        width: 110px;
+        height: 100px;
+        animation:tipMove 1.5s linear infinite;
+        position: absolute;
+        top: 0;
+        right: 15px;
+        z-index: 99;
+    }
+
+    .guidespot .arrow {
+        border-top: solid 2px #fff;
+        border-right: solid 2px #fff;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        top: 3px;
+        right: 3px;
+        transform: skewX(-25deg) rotate(-30deg);
+    }
+
+    .guidespot .lines {
+        width: 200px;
+        height: 80px;
+        border-radius: 50%;
+        border: solid 2px #fff;
+        position: absolute;
+        top: -14px;
+        right: -2px;
+        transform: rotate(-22deg)
+    }
+
+    .guidespot img {
+        margin-top: 45px;
+        margin-left: -40px;
+        transform: rotate(-25deg);
+        max-width: 200px;
+    }
+
+    @keyframes tipMove {
+        0%{
+            top:35px;
+            right:30px
+        }
+        40%{
+            top: 0;
+            right: 15px;
+        }
+        100%{
+            top:35px;
+            right:30px
+        }
+    }
+    
