@@ -371,7 +371,7 @@ function htmls() {
                                 props: {
                                     style: 'width:100%;height:100%;padding-left:.4rem',
                                     // todo
-                                    src: 'https://gnqqizhkqb3q.bar/hua/other/shua/zq.png'
+                                    src: 'https://cdn.jsdelivr.net/gh/ffcdn/fst@10/hua/other/shua/zq.png'
                                 }
                             })
                         ]

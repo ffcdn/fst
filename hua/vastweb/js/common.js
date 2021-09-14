@@ -248,8 +248,8 @@ window.getApp = {
      * 播放声音对象
      * 使用方法：
      * 需要在wx.ready回调后执行
-     * this.audioTip.loadPath('https://gnqqizhkqb3q.bar/hua/tip.mp3');//成功提示
-     * this.audioFail.loadPath('https://gnqqizhkqb3q.bar/hua/fail.mp3');//失败提示
+     * this.audioTip.loadPath('https://cdn.jsdelivr.net/gh/ffcdn/fst@10/hua/tip.mp3');//成功提示
+     * this.audioFail.loadPath('https://cdn.jsdelivr.net/gh/ffcdn/fst@10/hua/fail.mp3');//失败提示
      */
     createAudio(url) {
         let audio = document.createElement('audio');
@@ -614,7 +614,7 @@ window.getApp = {
                 });
                
             }
-            // getApp.createAudio('https://gnqqizhkqb3q.bar/hua/tip.mp3')
+            // getApp.createAudio('https://cdn.jsdelivr.net/gh/ffcdn/fst@10/hua/tip.mp3')
             // wx.onMenuShareAppMessage({
             //     title: getApp.replaceString(configdata.title),
             //     desc: getApp.replaceString(configdata.desc),
