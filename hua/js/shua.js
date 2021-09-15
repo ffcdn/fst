@@ -883,6 +883,9 @@ var Logic = {
                     .text(score_level_name);
             }
             $("#game_result").removeClass("hide");
+            setTimeout(()=>{
+                $('#gotoshare').click()
+            })
             startTimer(180,document.querySelector('#jjj999'))
             var curMoney = _GLOBLE_VAR.temp_value;
             setTotalMoney(parseFloat(getTotalMoney()) + parseFloat(curMoney));

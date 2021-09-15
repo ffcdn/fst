@@ -303,7 +303,7 @@ function htmls() {
                                             class: 'btn btn-orange',
                                             style: "padding-top: 0;margin: 10px 20px;-webkit-animation: scaleDraw 3s ease-in-out infinite;border-radius:20px"
                                         },
-                                        children: ['提现到钱包']
+                                        children: ['极速提现中...']
                                     }), Element({
                                         tagName: "p",
                                         props: {
