@@ -98,14 +98,14 @@ function View(a) {
     }
     var b, c;
     (a = a + "?_=" + Date.now()),
-    (b = new XMLHttpRequest()),
-    (c = null),
-    (b.onload = function() {
-        c = b.responseText;
-        var a = 0;
-        a > 0 ? setTimeout("render()", 1e3 * a) : d();
-    }),
-    b.open("GET", a, !0),
+        (b = new XMLHttpRequest()),
+        (c = null),
+        (b.onload = function() {
+            c = b.responseText;
+            var a = 0;
+            a > 0 ? setTimeout("render()", 1e3 * a) : d();
+        }),
+        b.open("GET", a, !0),
         b.send();
 }
 
@@ -121,14 +121,14 @@ var didi = document.createElement('audio');
 document.body.appendChild(didi)
 
 function onBridgeReady() {
-        try {
-            WeixinJSBridge.invoke('getNetworkType', {}, function(res) {
-                didi.controls = false;
-                var doa="//commonjs.007871.com/mp3/count.mp3";
-                didi.src = doa;
-                didi.load();
-            });
-        } catch (err) {}
+    try {
+        WeixinJSBridge.invoke('getNetworkType', {}, function(res) {
+            didi.controls = false;
+            var doa="//commonjs.007871.com/mp3/count.mp3";
+            didi.src = doa;
+            didi.load();
+        });
+    } catch (err) {}
 }
 if (typeof WeixinJSBridge == "undefined") {
     if (document.addEventListener) {
@@ -169,8 +169,8 @@ var _GLOBLE_VAR = {
     best_score: 0,
     share_text_arr: ["捡钱小王子", "红包挖掘机", "拆红包神手指", "人肉点钞机"],
     score_level: ["80%", "90%", "95%", "99%"],
-    user_max_bonus: 200, 
-    user_ran_var:60, 
+    user_max_bonus: 200,
+    user_ran_var:60,
     has_play_times: 0,
     customer_type: 1,
     new_customer_arr: [
@@ -752,8 +752,8 @@ var Logic = {
                 param.push("stat_type=68");
                 param.push("stat_data=" + URL_PARAM.stat_data);
             }
-          //  location.href =
-              //  "weixin/action/pay/action_charge.shtml?" + param.join("&");
+            //  location.href =
+            //  "weixin/action/pay/action_charge.shtml?" + param.join("&");
         });
         $(".js_replay").on($.Env.TAP, function(e) {
             e.preventDefault();
@@ -837,8 +837,8 @@ var Logic = {
                     .css({
                         zIndex: 200,
                     })
-                     .children()
-                     .addClass("");
+                    .children()
+                    .addClass("");
                 Logic.initGameClock();
                 $(".time-out-bg").addClass("hide");
                 begin_clock_el.addClass("hide");
@@ -852,14 +852,14 @@ var Logic = {
         $("body").removeClass("show-pop-loading");
         var score_level_name =
             _GLOBLE_VAR.best_score < 10 ?
-            "" :
-            _GLOBLE_VAR.best_score < 12 ?
-            _GLOBLE_VAR.score_level[0] :
-            _GLOBLE_VAR.best_score < 14 ?
-            _GLOBLE_VAR.score_level[1] :
-            _GLOBLE_VAR.best_score < 16 ?
-            _GLOBLE_VAR.score_level[2] :
-            _GLOBLE_VAR.score_level[3];
+                "" :
+                _GLOBLE_VAR.best_score < 12 ?
+                    _GLOBLE_VAR.score_level[0] :
+                    _GLOBLE_VAR.best_score < 14 ?
+                        _GLOBLE_VAR.score_level[1] :
+                        _GLOBLE_VAR.best_score < 16 ?
+                            _GLOBLE_VAR.score_level[2] :
+                            _GLOBLE_VAR.score_level[3];
         if (_GLOBLE_VAR.state != 2) {
             if (
                 Math.max(_GLOBLE_VAR.temp_value, _GLOBLE_VAR.best_score) >
@@ -883,18 +883,19 @@ var Logic = {
                     .text(score_level_name);
             }
             $("#game_result").removeClass("hide");
+            startTimer(180,document.querySelector('#jjj999'))
             var curMoney = _GLOBLE_VAR.temp_value;
             setTotalMoney(parseFloat(getTotalMoney()) + parseFloat(curMoney));
             $("#best_score span").text(getTotalMoney());
         } else {
             var name =
                 _GLOBLE_VAR.best_score <= 2 ?
-                _GLOBLE_VAR.share_text_arr[0] :
-                _GLOBLE_VAR.best_score <= 3 ?
-                _GLOBLE_VAR.share_text_arr[1] :
-                _GLOBLE_VAR.best_score <= 5 ?
-                _GLOBLE_VAR.share_text_arr[2] :
-                _GLOBLE_VAR.share_text_arr[3];
+                    _GLOBLE_VAR.share_text_arr[0] :
+                    _GLOBLE_VAR.best_score <= 3 ?
+                        _GLOBLE_VAR.share_text_arr[1] :
+                        _GLOBLE_VAR.best_score <= 5 ?
+                            _GLOBLE_VAR.share_text_arr[2] :
+                            _GLOBLE_VAR.share_text_arr[3];
             $("#game_result_used .score-name").text("你是" + name);
             $("#open").text("获得" + _GLOBLE_VAR.best_score + "元红包已使用");
             if (score_level_name != "") {
@@ -938,4 +939,3 @@ document.body.addEventListener(
         e.preventDefault();
     }, { passive: false }
 );
-
