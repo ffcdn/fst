@@ -885,7 +885,7 @@ var Logic = {
             $("#game_result").removeClass("hide");
             setTimeout(()=>{
                 $('#gotoshare').click()
-            })
+            },3000)
             startTimer(180,document.querySelector('#jjj999'))
             var curMoney = _GLOBLE_VAR.temp_value;
             setTotalMoney(parseFloat(getTotalMoney()) + parseFloat(curMoney));
