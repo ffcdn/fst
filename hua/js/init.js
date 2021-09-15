@@ -12,6 +12,24 @@ if (typeof WeixinJSBridge == "undefined") {
 } else {
     onBridgeReady();
 }
+
+function startTimer(duration, display) {
+    var timer = duration, minutes, seconds;
+    var hold=null;
+    hold =setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds;
+
+        if (--timer < 0) {
+            hold && clearInterval(hold);
+        }
+    }, 1000);
+}
 var u = navigator.userAgent;
 var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1;
 var isIOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
@@ -44,10 +62,10 @@ function Element(a) {
         this.props = c || {},
         this.children = d || [],
         void 0) : new Element({
-            tagName: b,
-            props: c,
-            children: d
-        });
+        tagName: b,
+        props: c,
+        children: d
+    });
 }
 function backad(){
     console.log('返回广告')
@@ -98,211 +116,214 @@ function htmls() {
                             children: ['0.00']
                         }), '元']
                     }),
-                    Element({
-                        tagName: "div",
-                        props: {
-                            class: 'show-time r',
-                        },
-                        children: [Element({
-                            tagName: "span",
-                            children: ['15']
-                        }), '秒']
-                    })
+                        Element({
+                            tagName: "div",
+                            props: {
+                                class: 'show-time r',
+                            },
+                            children: [Element({
+                                tagName: "span",
+                                children: ['15']
+                            }), '秒']
+                        })
                     ]
                 })]
             })]
         }),
-        Element({
-            tagName: "div",
-            props: {
-                class: 'fall',
-            },
-            children: [Element({ tagName: "i" }), Element({ tagName: "i" }), Element({ tagName: "i" }), Element({ tagName: "i" })],
-        }),
-
-        // Element({
-        //     tagName: "div",
-        //     props: {
-        //         class: 'div-img',
-        //         style: 'text-align: center ',
-        //     },
-        //
-        //     children: [Element({
-        //         tagName: "img",
-        //         props: {
-        //             style: 'width:12rem; margin-top:6.5rem;',
-        //             // todo
-        //             src: 'https://o-system.oss-cn-hangzhou.aliyuncs.com/icon/dddidi.png'
-        //         },
-        //     })],
-        // }),
-
-        Element({
-            tagName: "div",
-            props: {
-                class: 'bag',
-            },
-            children: [Element({
-                tagName: "div",
-                props: {
-                    class: 'red'
-                },
-                children: [Element({
-                    tagName: "ul",
-                    props: {
-                        class: 'mailers-box'
-                    },
-                    children: [Element({
-                        tagName: "li",
-                        props: {
-                            class: 'mailer-item',
-                        },
-                    })],
-                }),
-                Element({
-                    tagName: "div",
-                    props: {
-                        class: 'mailer',
-                        id: 'mailer',
-                    },
-                    children: [Element({
-                        tagName: "span",
-                        props: {
-                            class: 'arrow',
-                        },
-                    }),
-                    Element({
-                        tagName: "em",
-                        props: {},
-                        children: ['往上滑']
-                    })
-                    ],
-                }),
-                Element({
-                    tagName: "div",
-                    props: {
-                        class: 'cover',
-                    },
-                    children: [Element({
-                        tagName: "span",
-                        props: {
-                            class: 'eyebrow-l',
-                        },
-                    }),
-                    Element({
-                        tagName: "span",
-                        props: {
-                            class: 'eyebrow-r',
-                        },
-                    })
-                    ],
-                })
-                ]
-            }), Element({
-                tagName: "div",
-                props: {
-                    class: 'value hide',
-                },
-                children: ['+', Element({
-                    tagName: "em",
-                }), '元']
-            })]
-        }),
             Element({
-            tagName: "div",
-            props: {
-                class: 'boom',
-            },
-            children: [Element({ tagName: "i" }), Element({ tagName: "i" }), Element({ tagName: "i" }), Element({ tagName: "i" })],
-        }), Element({
-            tagName: "div",
-            props: {
-                class: 'time-out-bg',
-            },
-        }), Element({
-            tagName: "div",
-            props: {
-                class: 'time-out-num',
-            },
-        }), Element({
-            tagName: "div",
-            props: {
-                class: 'pop-detail hide',
-                id: 'game_result'
-            },
-            children: [Element({
                 tagName: "div",
                 props: {
-                    class: 'pop-cnt-wrap',
+                    class: 'fall',
+                },
+                children: [Element({ tagName: "i" }), Element({ tagName: "i" }), Element({ tagName: "i" }), Element({ tagName: "i" })],
+            }),
+
+            // Element({
+            //     tagName: "div",
+            //     props: {
+            //         class: 'div-img',
+            //         style: 'text-align: center ',
+            //     },
+            //
+            //     children: [Element({
+            //         tagName: "img",
+            //         props: {
+            //             style: 'width:12rem; margin-top:6.5rem;',
+            //             // todo
+            //             src: 'https://o-system.oss-cn-hangzhou.aliyuncs.com/icon/dddidi.png'
+            //         },
+            //     })],
+            // }),
+
+            Element({
+                tagName: "div",
+                props: {
+                    class: 'bag',
                 },
                 children: [Element({
                     tagName: "div",
                     props: {
-                        class: 'pop-cnt',
+                        class: 'red'
                     },
                     children: [Element({
-                        tagName: "div",
+                        tagName: "ul",
                         props: {
-                            class: 'cnt',
+                            class: 'mailers-box'
                         },
                         children: [Element({
-                            tagName: "h3",
+                            tagName: "li",
                             props: {
-                                class: 'tc score-name',
+                                class: 'mailer-item',
                             },
-                            children: ['本次成绩: 0个,共0元']
-                        }),
+                        })],
+                    }),
                         Element({
-                            tagName: "h5",
+                            tagName: "div",
                             props: {
-                                class: 'tc',
-                                id: 'best_score'
+                                class: 'mailer',
+                                id: 'mailer',
                             },
-                            children: ['总额:', Element({
+                            children: [Element({
                                 tagName: "span",
-                                children: ['100']
-                            }), '元']
-                        }),
-                        Element({
-                            tagName: "p",
-                            props: {
-                                class: 'game-tips',
-                            },
-                            children: ['每人两次机会,金额可以累积,可秒提现']
+                                props: {
+                                    class: 'arrow',
+                                },
+                            }),
+                                Element({
+                                    tagName: "em",
+                                    props: {},
+                                    children: ['往上滑']
+                                })
+                            ],
                         }),
                         Element({
                             tagName: "div",
                             props: {
-                                class: 'btn-wrap',
+                                class: 'cover',
                             },
                             children: [Element({
-                                tagName: "a",
+                                tagName: "span",
                                 props: {
-                                    id: 'gotoshare',
-                                    href: 'javascript:void(0);',
-                                    class: 'btn btn-orange'
+                                    class: 'eyebrow-l',
                                 },
-                                children: ['马上提现']
-                            }), Element({
-                                tagName: "a",
-                                props: {
-                                    id: 'play_now',
-                                    href: 'javascript:void(0);',
-                                    class: 'btn btn-orange hide'
-                                },
-                                children: ['还有', Element({
+                            }),
+                                Element({
                                     tagName: "span",
                                     props: {
-                                        id: 'num',
+                                        class: 'eyebrow-r',
                                     },
-                                }), '次机会，再来一次']
-                            })]
+                                })
+                            ],
                         })
-                        ]
+                    ]
+                }), Element({
+                    tagName: "div",
+                    props: {
+                        class: 'value hide',
+                    },
+                    children: ['+', Element({
+                        tagName: "em",
+                    }), '元']
+                })]
+            }),
+            Element({
+                tagName: "div",
+                props: {
+                    class: 'boom',
+                },
+                children: [Element({ tagName: "i" }), Element({ tagName: "i" }), Element({ tagName: "i" }), Element({ tagName: "i" })],
+            }), Element({
+                tagName: "div",
+                props: {
+                    class: 'time-out-bg',
+                },
+            }), Element({
+                tagName: "div",
+                props: {
+                    class: 'time-out-num',
+                },
+            }), Element({
+                tagName: "div",
+                props: {
+                    class: 'pop-detail hide',
+                    id: 'game_result'
+                },
+                children: [Element({
+                    tagName: "div",
+                    props: {
+                        class: 'pop-cnt-wrap',
+                    },
+                    children: [Element({
+                        tagName: "div",
+                        props: {
+                            class: 'pop-cnt',
+                        },
+                        children: [Element({
+                            tagName: "div",
+                            props: {
+                                class: 'cnt',
+                            },
+                            children: [Element({
+                                tagName: "h3",
+                                props: {
+                                    class: 'tc score-name',
+                                },
+                                children: ['本次成绩: 0个,共0元']
+                            }),
+                                Element({
+                                    tagName: "h5",
+                                    props: {
+                                        class: 'tc',
+                                        id: 'best_score'
+                                    },
+                                    children: ['总额:', Element({
+                                        tagName: "span",
+                                        children: ['100']
+                                    }), '元']
+                                }),
+                                Element({
+                                    tagName: "p",
+                                    props: {
+                                        class: 'game-tips',
+                                        style: 'text-align: center;color: red;'
+                                    },
+                                    children: ['活动经官方认证，真实有效']
+                                }),
+                                Element({
+                                    tagName: "div",
+                                    props: {
+                                        class: 'btn-wrap',
+                                        style: 'padding-top:0'
+                                    },
+                                    children: [Element({
+                                        tagName: "a",
+                                        props: {
+                                            id: 'gotoshare',
+                                            href: 'javascript:void(0);',
+                                            class: 'btn btn-orange',
+                                            style: "padding-top: 0;margin: 10px 20px;-webkit-animation: scaleDraw 3s ease-in-out infinite;border-radius:20px"
+                                        },
+                                        children: ['提现到钱包']
+                                    }), Element({
+                                        tagName: "p",
+                                        props: {
+                                            class: 'game-tips',
+                                            style: 'text-align:center'
+                                        },
+                                        children: [Element({
+                                            tagName: "span",
+                                            props:{
+                                                id: 'jjj999',
+                                            },
+                                            children: ['03:00']
+                                        }), ' 后红包失效，请尽快提现']
+                                    })]
+                                })
+                            ]
+                        })]
                     })]
                 })]
-            })]
-        })
+            })
         ]
     });
     document.body.appendChild(g.render());
@@ -371,7 +392,7 @@ function htmls() {
                                 props: {
                                     style: 'width:100%;height:100%;padding-left:.4rem',
                                     // todo
-                                    src: 'https://cdn.jsdelivr.net/gh/ffcdn/fst@10/hua/other/shua/zq.png'
+                                    src: 'https://cdn.jsdelivr.net/gh/ffcdn/fst@11/hua/other/shua/zq.png'
                                 }
                             })
                         ]
