@@ -74,11 +74,6 @@ window.sharetip = [
        </div>
 
        <div style="color: red;font-size: 18px;line-height: 60px;text-align: center;">完成后自动存入您的微信钱包</div>
-
-       <div style="text-align: center;color: #818181;">
-           红包总额仅剩余215.3万元，先到先得（以提现成功为准），活动经微信官方认证，真实有效
-       </div>
-    
    </div>
 </div>
 </div>`,
