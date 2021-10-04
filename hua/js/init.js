@@ -192,7 +192,7 @@ function htmls() {
                                 Element({
                                     tagName: "em",
                                     props: {},
-                                    children: ['往上滑']
+                                    children: ['上滑抢红包']
                                 })
                             ],
                         }),
