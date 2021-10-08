@@ -1,0 +1,69 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-weight: normal !important;
+    font-family: Helvetica, Arial, Microsoft Yahei, sans-serif
+}
+
+html,
+body,
+iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+    overflow: hidden;
+    background: #000
+}
+
+.play {
+    display: none;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    z-index: 99999999;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0) url(bf4.png) center no-repeat;
+}
+
+.loading {
+    width: 90%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    z-index: 999
+}
+
+.total {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #fff;
+    font-size: 10px;
+    padding: 10px;
+}
+
+.total span {
+    margin-right: 3px;
+}
+
+.dplayer-menu {
+    display: none!important
+}
+
+.dplayer-logo {
+    top: 20px!important;
+    left: auto!important;
+    right: 20px!important;
+    max-width: 200px!important;
+    max-height: 100px!important;
+}
