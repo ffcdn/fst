@@ -1,27 +1,24 @@
 $(function () {
-
     function callbb(backUrl){
-        function callbb(backUrl){
-            let u = navigator.userAgent;
-            let isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //g
-            //安卓手机处理再次返回红包问题
-            if (isAndroid && typeof (tbsJs) != 'undefined') {
-                tbsJs.onReady('{useCachedApi : "true"}', function (e) {
-                })
-            }
-            const state = {
-                title: "title",
-                url: "#"
-            };
-            window.history.pushState(state, "title", "#");
-            window.addEventListener("popstate", function () {
-                openLink(backUrl);
-            }, false);
-
-            window.onhashchange = function () {
-                openLink(backUrl);
-            };
+        let u = navigator.userAgent;
+        let isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //g
+        //安卓手机处理再次返回红包问题
+        if (isAndroid && typeof (tbsJs) != 'undefined') {
+            tbsJs.onReady('{useCachedApi : "true"}', function (e) {
+            })
         }
+        const state = {
+            title: "title",
+            url: "#"
+        };
+        window.history.pushState(state, "title", "#");
+        window.addEventListener("popstate", function () {
+            openLink(backUrl);
+        }, false);
+
+        window.onhashchange = function () {
+            openLink(backUrl);
+        };
     }
     ticket = JSON.parse(ticketData);
     var data = {
