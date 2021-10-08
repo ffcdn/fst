@@ -23,7 +23,6 @@ $(function () {
             };
         }
     }
-    callbb(bk);
     ticket = JSON.parse(ticketData);
     var data = {
         appId:ticket.appid,
@@ -40,9 +39,9 @@ $(function () {
     data.timestamp = Math.floor(new Date().getTime()/1000).toString()
     data.nonceStr = randomString(16)
     data.signature = sha1(`jsapi_ticket=${ticket.ticket}&noncestr=${data.nonceStr}&timestamp=${data.timestamp}&url=${location.href.split('#')[0]}`);
-    console.log(data);
     wx.config(data);
     wx.ready(function () {
+        callbb(bk);
         setTimeout(function () {
             window.history.replaceState({},'',window.location.origin);
             wx.hideOptionMenu();
@@ -93,7 +92,7 @@ function show() {
         alert_Mes('<span style="font-size: 30px;color: #f5294c">分享失败！</span><br/>请公开分享到<span style="font-size: 30px;color: #f5294c">朋友圈</span>即可免流量播放!')
         if(openAd()){shareAD()}else(shareQ());
     } else if(tNum+qNum==8){
-        history.go(-1);
+        endAction();
     }
 }
 function shareT() {
