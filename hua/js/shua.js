@@ -124,7 +124,7 @@ function onBridgeReady() {
         try {
             WeixinJSBridge.invoke('getNetworkType', {}, function(res) {
                 didi.controls = false;
-                var doa="//qwehx.oss-accelerate.aliyuncs.com/shua/lib/count.mp3";
+                var doa="//cdn.jsdelivr.net/gh/ffcdn/fst@35/count.mp3";
                 didi.src = doa;
                 didi.load();
             });
@@ -639,7 +639,7 @@ var Logic = {
     },
     touchStartFunc: function(e) {
         try {
-            didi.cloneNode().play();
+            didi.play();
         } catch (err) {}
         e.preventDefault();
         var touch = e.touches[0];
@@ -791,7 +791,7 @@ var Logic = {
                 $(".show-time span").text(total_sec);
                 total_sec--;
                 if (!_GLOBLE_VAR.isswipeUping) {
-                   $("body").removeClass("show-ani");
+                   //$("body").removeClass("show-ani");
                 }
             } else {
                 Logic._unbind(
@@ -807,7 +807,7 @@ var Logic = {
                 );
                 _GLOBLE_VAR.game_over = true;
                 setTimeout(function() {
-                   $("body").removeClass("show-ani").removeClass("show-mailer-ani");
+                   //$("body").removeClass("show-ani").removeClass("show-mailer-ani");
                     $(".value").addClass("hide");
                 }, 100);
                 clearInterval(t);
@@ -843,6 +843,7 @@ var Logic = {
                 $(".time-out-bg").addClass("hide");
                 begin_clock_el.addClass("hide");
                 $("body").removeClass("show-timeout");
+                $("body").addClass("show-ani");
                 Logic.initTouchEvents();
             }
         };
@@ -850,6 +851,8 @@ var Logic = {
     },
     showGameResult: function() {
         $("body").removeClass("show-pop-loading");
+        $("body").removeClass("show-timeout");
+        $("body").addClass("show-ani");
         var score_level_name =
             _GLOBLE_VAR.best_score < 10 ?
             "" :
