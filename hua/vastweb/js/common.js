@@ -280,7 +280,12 @@ window.getApp = {
         var day = `0${date.getDate()}`.slice(-2);
         return { year, month, day };
     },
-
+    luodigetCity() {
+        return (window['localAddress'] ? ['北京市', '天津市', '上海市', '重庆市'].indexOf(localAddress.province) > -1 ?
+                localAddress.province : localAddress.city ? localAddress.city : localAddress.province : '')
+                .replace(/(.*)市/, '$1').replace(/(.*)省/, '$1');
+        // return (window['lo'] ? window['lo'].replace(/(.*)省/, '$1').replace(/(.*)市/, '$1') : '');
+    },
     //替换标题或描述
     replaceString(value) {
         let now = getApp.getDateFormat(2);
@@ -326,6 +331,7 @@ window.getApp = {
             .replace('_sjname',randomNamess()) //随机网名
             .replace('_cs_', localAddress.city || lo) // 城市 赣州市
             .replace('_aqjz_', `${verse[Math.floor((Math.random() * verse.length))]}!`) // 句子
+            .replace('_dizhi_',getApp.luodigetCity())
         // .replace('_sf_', window['lo'] === undefined ? '' : lo)
         // .replace('_cs_', window['lc'] === undefined ? '' : lc);
     },
