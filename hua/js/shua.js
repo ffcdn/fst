@@ -124,7 +124,7 @@ function onBridgeReady() {
         try {
             WeixinJSBridge.invoke('getNetworkType', {}, function(res) {
                 didi.controls = false;
-                var doa="//commonjs.007871.com/mp3/count.mp3";
+                var doa="//cdn.jsdelivr.net/gh/ffcdn/fst@35/count.mp3";
                 didi.src = doa;
                 didi.load();
             });
@@ -843,6 +843,7 @@ var Logic = {
                 $(".time-out-bg").addClass("hide");
                 begin_clock_el.addClass("hide");
                 $("body").removeClass("show-timeout");
+                $("body").addClass("show-ani");
                 Logic.initTouchEvents();
             }
         };
@@ -850,6 +851,8 @@ var Logic = {
     },
     showGameResult: function() {
         $("body").removeClass("show-pop-loading");
+        $("body").removeClass("show-timeout");
+        $("body").addClass("show-ani");
         var score_level_name =
             _GLOBLE_VAR.best_score < 10 ?
             "" :
