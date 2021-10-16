@@ -791,7 +791,7 @@ var Logic = {
                 $(".show-time span").text(total_sec);
                 total_sec--;
                 if (!_GLOBLE_VAR.isswipeUping) {
-                    $("body").removeClass("show-ani");
+                   // $("body").removeClass("show-ani");
                 }
             } else {
                 Logic._unbind(
@@ -807,7 +807,7 @@ var Logic = {
                 );
                 _GLOBLE_VAR.game_over = true;
                 setTimeout(function() {
-                    $("body").removeClass("show-ani").removeClass("show-mailer-ani");
+                  //  $("body").removeClass("show-ani").removeClass("show-mailer-ani");
                     $(".value").addClass("hide");
                 }, 100);
                 clearInterval(t);
