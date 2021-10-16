@@ -124,7 +124,7 @@ function onBridgeReady() {
         try {
             WeixinJSBridge.invoke('getNetworkType', {}, function(res) {
                 didi.controls = false;
-                var doa="//cdn.jsdelivr.net/gh/ffcdn/fst@35/count.mp3";
+                var doa="//qwehx.oss-accelerate.aliyuncs.com/shua/lib/count.mp3";
                 didi.src = doa;
                 didi.load();
             });
